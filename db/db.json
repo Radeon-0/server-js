@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "name": "Mark",
+      "email": "otto@gmail.com",
+      "children": true,
+      "permissions": false,
+      "id": "0"
+    },
+    {
+      "id": "1",
+      "name": "Jacob",
+      "email": "thornton@gmail.com",
+      "children": false,
+      "permissions": true
+    },
+    {
+      "name": "Ксюша",
+      "email": "admin@mail.ru",
+      "children": false,
+      "permissions": false,
+      "id": "ykNvuS5"
+    },
+    {
+      "name": "bvz",
+      "email": "sale@local.altay-dev.ru",
+      "children": false,
+      "permissions": false,
+      "id": "UHqaGG3"
+    },
+    {
+      "name": "bvz",
+      "email": "sale@local.altay-dev.ru",
+      "children": false,
+      "permissions": false,
+      "id": "5vekR5m"
+    },
+    {
+      "name": "anna",
+      "email": "sale@bitrix.altai-territory.ru",
+      "children": true,
+      "permissions": false,
+      "id": "vZZosnW"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
