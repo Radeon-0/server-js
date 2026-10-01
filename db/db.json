@@ -8,39 +8,18 @@
       "id": "0"
     },
     {
-      "id": "1",
-      "name": "Jacob",
+      "name": "Jacob1",
       "email": "thornton@gmail.com",
       "children": false,
-      "permissions": true
-    },
-    {
-      "name": "Ксюша",
-      "email": "admin@mail.ru",
-      "children": false,
       "permissions": false,
-      "id": "ykNvuS5"
+      "id": "1"
     },
     {
-      "name": "bvz",
-      "email": "sale@local.altay-dev.ru",
-      "children": false,
-      "permissions": false,
-      "id": "UHqaGG3"
-    },
-    {
-      "name": "bvz",
-      "email": "sale@local.altay-dev.ru",
-      "children": false,
-      "permissions": false,
-      "id": "5vekR5m"
-    },
-    {
-      "name": "anna",
-      "email": "sale@bitrix.altai-territory.ru",
+      "name": "NameUser",
+      "email": "Alex@mail.cr",
       "children": true,
       "permissions": false,
-      "id": "vZZosnW"
+      "id": "RLPzRg-"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -18,6 +18,7 @@ export const addUsers = () => {
                 permissions: false
             };
 
+            
             userService.addUser(user).then(() => {
                 userService.getUsers().then(users => {
                     render(users);

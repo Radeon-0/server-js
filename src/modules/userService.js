@@ -1,59 +1,75 @@
 export class UserService {
 
     getUsers() {
-        return fetch('http://localhost:3000/users').then(res => res.json())
+        return this.getData('http://localhost:3000/users');
+    }
+
+    getData(url) {
+        return fetch(url)
+            .then(res => res.json())
+            .catch(() => {
+                throw new Error('Произошла ошибка, данных нет!');
+            });
+    }
+
+
+    sendData(url, data) {
+        return fetch(url, data)
+            .then(res => res.json())
+            .catch(() => {
+                throw new Error('Произошла ошибка, данных нет!');
+            });
     }
 
     addUser(user) {
-        return fetch('http://localhost:3000/users', {
-            method: "POST",
+        return this.sendData('http://localhost:3000/users', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(user)
-        }).then(res => res.json())
+        });
     }
 
     removeUser(id) {
-        return fetch(`http://localhost:3000/users/${id}`, {
+        return this.sendData(`http://localhost:3000/users/${id}`, {
             method: 'DELETE'
-        }).then(res => res.json());
+        });
     }
 
     changeUser(id, data) {
-        return fetch(`http://localhost:3000/users/${id}`, {
+        return this.sendData(`http://localhost:3000/users/${id}`, {
             method: 'PATCH',
             body: JSON.stringify(data),
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
-        }).then(res => res.json());
+        });
     }
 
     getUser(id) {
-        return fetch(`http://localhost:3000/users/${id}`).then(res => res.json());
+        return this.getData(`http://localhost:3000/users/${id}`);
     }
+
     editUser(id, user) {
-        return fetch(`http://localhost:3000/users/${id}`, {
+        return this.sendData(`http://localhost:3000/users/${id}`, {
             method: 'PUT',
             body: JSON.stringify(user),
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
-        }).then(res => res.json());
+        });
     }
 
     filterUsers(filterOption) {
-        return fetch(`http://localhost:3000/users?${filterOption}=true`).then(res => res.json());
+        return this.getData(`http://localhost:3000/users?${filterOption}=true`);
     }
 
     getSortUsers(sortOption) {
-        return fetch(`http://localhost:3000/users?_sort=${sortOption.name}&_order=${sortOption.value}`).then(res => res.json());
+        return this.getData(`http://localhost:3000/users?_sort=${sortOption.name}&_order=${sortOption.value}`);
     }
 
     getSortSearchUsers(str) {
-        return fetch(`http://localhost:3000/users?name_like=${str}`).then(res => res.json());
+        return this.getData(`http://localhost:3000/users?name_like=${str}`);
     }
-
-
 }
